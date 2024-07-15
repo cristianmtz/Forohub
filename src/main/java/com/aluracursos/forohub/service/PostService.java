@@ -41,7 +41,6 @@ public class PostService {
         post.setUser(user);
 
 
-
         // Obtener la categoría y asociarla al post
         Category entityCategory = categoryService.findByName(category);
         post.setCategory(entityCategory);

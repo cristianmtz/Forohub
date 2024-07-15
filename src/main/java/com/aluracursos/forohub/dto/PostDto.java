@@ -16,6 +16,5 @@ public record PostDto(
 
     LocalDateTime createdAt
 
-
 ) {
 }

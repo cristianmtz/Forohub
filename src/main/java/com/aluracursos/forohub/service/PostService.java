@@ -35,6 +35,13 @@ public class PostService {
         // Convertir PostDto a entidad Post
         Post post = postMapperInterface.toEntity(postDto);
 
+        //Obtener el usuario y asociarla al post
+        User user = userService.findByUsername(username)
+                .orElseThrow(() -> new RuntimeException("No user found"));
+        post.setUser(user);
+
+
+
         // Obtener la categoría y asociarla al post
         Category entityCategory = categoryService.findByName(category);
         post.setCategory(entityCategory);
